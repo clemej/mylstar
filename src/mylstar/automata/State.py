@@ -29,15 +29,15 @@
 # +----------------------------------------------------------------------------
 # | Pylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.tools.Decorators import PylstarLogger
+from mylstar.tools.Decorators import PylstarLogger
 
 
 @PylstarLogger
 class State(object):
     """Definition of a state that belongs to an automata
 
-    >>> from pylstar.automata.State import State
-    >>> from pylstar.automata.Transition import Transition
+    >>> from mylstar.automata.State import State
+    >>> from mylstar.automata.Transition import Transition
     >>> s0 = State("s0")
     >>> s1 = State("s1")
     >>> print(s0)
@@ -59,9 +59,9 @@ class State(object):
         specified input_letter. It returns a tupple made of the output letter
         that is attached to the found transition and the state it reaches.
 
-        >>> from pylstar.automata.State import State
-        >>> from pylstar.automata.Transition import Transition
-        >>> from pylstar.Letter import Letter
+        >>> from mylstar.automata.State import State
+        >>> from mylstar.automata.Transition import Transition
+        >>> from mylstar.Letter import Letter
         >>> la = Letter('a')
         >>> l0 = Letter('0')
         >>> lb = Letter('b')

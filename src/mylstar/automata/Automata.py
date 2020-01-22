@@ -29,9 +29,9 @@
 # +----------------------------------------------------------------------------
 # | Pylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.tools.Decorators import PylstarLogger
-from pylstar.Word import Word
-from pylstar.automata.State import State
+from mylstar.tools.Decorators import PylstarLogger
+from mylstar.Word import Word
+from mylstar.automata.State import State
 
 
 @PylstarLogger
@@ -54,11 +54,11 @@ class Automata(object):
         It returns a tupple made of the output_word and the visited state
         captured while visiting the automata
 
-        >>> from pylstar.Letter import Letter, EmptyLetter
-        >>> from pylstar.Word import Word
-        >>> from pylstar.automata.State import State
-        >>> from pylstar.automata.Transition import Transition
-        >>> from pylstar.automata.Automata import Automata
+        >>> from mylstar.Letter import Letter, EmptyLetter
+        >>> from mylstar.Word import Word
+        >>> from mylstar.automata.State import State
+        >>> from mylstar.automata.Transition import Transition
+        >>> from mylstar.automata.Automata import Automata
         >>> l_lambda = EmptyLetter()
         >>> l_a = Letter('a')
         >>> l_b = Letter('b')
@@ -152,7 +152,7 @@ class Automata(object):
 
         :param dot_code: DOT definition of the Automata to parse
         :type dot_code: str
-        :rtype: pylstar.automata.Automata.Automata
+        :rtype: mylstar.automata.Automata.Automata
         """
 
         if dot_code is None:
@@ -161,7 +161,7 @@ class Automata(object):
         if not isinstance(dot_code, str):
             raise Exception("Dot code must be a String")
 
-        from pylstar.automata.DOTParser import DOTParser
+        from mylstar.automata.DOTParser import DOTParser
 
         return DOTParser.parse(dot_code)
         
@@ -172,9 +172,9 @@ class Automata(object):
 
         :rtype: str        
 
-        >>> from pylstar.automata.State import State
-        >>> from pylstar.Letter import Letter
-        >>> from pylstar.automata.Transition import Transition
+        >>> from mylstar.automata.State import State
+        >>> from mylstar.Letter import Letter
+        >>> from mylstar.automata.Transition import Transition
         >>> la = Letter('A')
         >>> lb = Letter('B')
         >>> l0 = Letter(0)
@@ -202,7 +202,7 @@ class Automata(object):
 
 
         """
-        from pylstar.automata.DOTParser import DOTParser
+        from mylstar.automata.DOTParser import DOTParser
 
         return DOTParser.build_dot_code(self)
 

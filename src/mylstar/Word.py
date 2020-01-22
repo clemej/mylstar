@@ -29,15 +29,15 @@
 # +----------------------------------------------------------------------------
 # | Pylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.tools.Decorators import PylstarLogger
-from pylstar.Letter import EmptyLetter
+from mylstar.tools.Decorators import PylstarLogger
+from mylstar.Letter import EmptyLetter
 
 @PylstarLogger
 class Word(object):
     """A word represents a sequence of letters.
 
-    >>> from pylstar.Word import Word
-    >>> from pylstar.Letter import Letter
+    >>> from mylstar.Word import Word
+    >>> from mylstar.Letter import Letter
     >>> l1 = Letter("a")
     >>> l2 = Letter("b")
     >>> w1 = Word([l1, l2])
@@ -82,8 +82,8 @@ class Word(object):
     def __add__(self, other):
         """Two words can be appended to produce a new one
 
-        >>> from pylstar.Word import Word
-        >>> from pylstar.Letter import Letter
+        >>> from mylstar.Word import Word
+        >>> from mylstar.Letter import Letter
         >>> l1 = Letter("a")
         >>> l2 = Letter("b")
         >>> l3 = Letter("c")
@@ -97,8 +97,8 @@ class Word(object):
 
         Only two words can be added
 
-        >>> from pylstar.Word import Word
-        >>> from pylstar.Letter import Letter
+        >>> from mylstar.Word import Word
+        >>> from mylstar.Letter import Letter
         >>> l1 = Letter("a")
         >>> w1 = Word([l1])
         >>> w2 = "data"

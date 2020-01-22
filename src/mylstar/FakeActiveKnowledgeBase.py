@@ -29,10 +29,10 @@
 # +----------------------------------------------------------------------------
 # | Pylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.tools.Decorators import PylstarLogger
-from pylstar.ActiveKnowledgeBase import ActiveKnowledgeBase
-from pylstar.Letter import Letter, EmptyLetter
-from pylstar.Word import Word
+from mylstar.tools.Decorators import PylstarLogger
+from mylstar.ActiveKnowledgeBase import ActiveKnowledgeBase
+from mylstar.Letter import Letter, EmptyLetter
+from mylstar.Word import Word
 
 
 @PylstarLogger
@@ -41,13 +41,13 @@ class FakeActiveKnowledgeBase(ActiveKnowledgeBase):
     on a preseted automata to answer queries.
 
     
-    >>> from pylstar.automata.State import State
-    >>> from pylstar.automata.Transition import Transition
-    >>> from pylstar.automata.Automata import Automata
-    >>> from pylstar.Letter import Letter
-    >>> from pylstar.Word import Word
-    >>> from pylstar.OutputQuery import OutputQuery
-    >>> from pylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
+    >>> from mylstar.automata.State import State
+    >>> from mylstar.automata.Transition import Transition
+    >>> from mylstar.automata.Automata import Automata
+    >>> from mylstar.Letter import Letter
+    >>> from mylstar.Word import Word
+    >>> from mylstar.OutputQuery import OutputQuery
+    >>> from mylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
     >>> l_a = Letter('a')
     >>> l_b = Letter('b')
     >>> l_c = Letter('c')

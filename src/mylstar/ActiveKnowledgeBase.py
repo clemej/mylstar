@@ -29,8 +29,8 @@ import abc
 # +----------------------------------------------------------------------------
 # | Pylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.tools.Decorators import PylstarLogger
-from pylstar.KnowledgeBase import KnowledgeBase
+from mylstar.tools.Decorators import PylstarLogger
+from mylstar.KnowledgeBase import KnowledgeBase
 
 
 @PylstarLogger

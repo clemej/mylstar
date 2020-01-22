@@ -30,7 +30,7 @@ import sys
 from setuptools import setup, find_packages
 
 sys.path.insert(0, 'src/')
-from pylstar import release
+from mylstar import release
 from resources.sdist.test_command import test_command
 from resources.sdist.utils import opj
 

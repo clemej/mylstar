@@ -1,3 +1,12 @@
+
+========================================================================
+mylstar : A fork of pystar for RNN automata extraction
+========================================================================
+
+Name changed simply to avoid conflict with original library.  
+Original README intact below: 
+          
+
 ========================================================================
 pylstar : An implementation of the LSTAR Grammatical Inference Algorithm
 ========================================================================

@@ -33,7 +33,7 @@ import unittest
 class test_command(Command):
     description = "Test PYLSTAR"
 
-    user_options = [('reportfile=', None, 'name of the generated XML report file (not required)') ]
+    user_options = [('reportfile=', None, 'name of the generated XML report file (not required)')]
 
     def initialize_options(self):
         self.reportfile = None

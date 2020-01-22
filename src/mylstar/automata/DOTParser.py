@@ -29,11 +29,11 @@ import uuid
 # +----------------------------------------------------------------------------
 # | Pylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.automata.Automata import Automata
-from pylstar.automata.State import State
-from pylstar.automata.Transition import Transition
-from pylstar.Letter import Letter
-from pylstar.tools.Decorators import PylstarLogger
+from mylstar.automata.Automata import Automata
+from mylstar.automata.State import State
+from mylstar.automata.Transition import Transition
+from mylstar.Letter import Letter
+from mylstar.tools.Decorators import PylstarLogger
 
 
 @PylstarLogger
@@ -47,12 +47,12 @@ class DOTParser(object):
         
         :param dot_content: the DOT definition of the automata to build
         :type dot_content: str
-        :rtype: pylstar.automata.Automata.Automata
+        :rtype: mylstar.automata.Automata.Automata
         
-        >>> from pylstar.automata.State import State
-        >>> from pylstar.Letter import Letter
-        >>> from pylstar.automata.Transition import Transition
-        >>> from pylstar.automata.Automata import Automata
+        >>> from mylstar.automata.State import State
+        >>> from mylstar.Letter import Letter
+        >>> from mylstar.automata.Transition import Transition
+        >>> from mylstar.automata.Automata import Automata
         >>> la = Letter('A')
         >>> lb = Letter('B')
         >>> l0 = Letter(0)
@@ -226,13 +226,13 @@ class DOTParser(object):
         """This method returns the DOT code that represents the provided Automata.
 
         :param automata: The automata the returned DOT code will represent
-        :type automata: pylstar.automata.Automata
+        :type automata: mylstar.automata.Automata
         :rtype: str        
 
-        >>> from pylstar.automata.State import State
-        >>> from pylstar.Letter import Letter
-        >>> from pylstar.automata.Transition import Transition
-        >>> from pylstar.automata.Automata import Automata
+        >>> from mylstar.automata.State import State
+        >>> from mylstar.Letter import Letter
+        >>> from mylstar.automata.Transition import Transition
+        >>> from mylstar.automata.Automata import Automata
         >>> la = Letter('A')
         >>> lb = Letter('B')
         >>> l0 = Letter(0)

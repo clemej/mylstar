@@ -29,9 +29,9 @@ import abc
 # +----------------------------------------------------------------------------
 # | Pylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.tools.Decorators import PylstarLogger
-from pylstar.KnowledgeTree import KnowledgeTree
-from pylstar.KnowledgeBaseStats import KnowledgeBaseStats
+from mylstar.tools.Decorators import PylstarLogger
+from mylstar.KnowledgeTree import KnowledgeTree
+from mylstar.KnowledgeBaseStats import KnowledgeBaseStats
 
 
 @PylstarLogger
@@ -40,10 +40,10 @@ class KnowledgeBase(object):
 
     This knowledge base stores all the query results in a tree.
 
-    >>> from pylstar.KnowledgeBase import KnowledgeBase
-    >>> from pylstar.OutputQuery import OutputQuery
-    >>> from pylstar.Word import Word
-    >>> from pylstar.Letter import Letter
+    >>> from mylstar.KnowledgeBase import KnowledgeBase
+    >>> from mylstar.OutputQuery import OutputQuery
+    >>> from mylstar.Word import Word
+    >>> from mylstar.Letter import Letter
     >>> word1 = Word([Letter('a'), Letter('b')])
     >>> query1 = OutputQuery(word1)
     >>> kbase = KnowledgeBase()

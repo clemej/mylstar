@@ -30,13 +30,13 @@ import itertools
 # +----------------------------------------------------------------------------
 # | Pylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.tools.Decorators import PylstarLogger
-from pylstar.Letter import EmptyLetter
-from pylstar.Word import Word
-from pylstar.OutputQuery import OutputQuery
-from pylstar.automata.State import State
-from pylstar.automata.Automata import Automata
-from pylstar.automata.Transition import Transition
+from mylstar.tools.Decorators import PylstarLogger
+from mylstar.Letter import EmptyLetter
+from mylstar.Word import Word
+from mylstar.OutputQuery import OutputQuery
+from mylstar.automata.State import State
+from mylstar.automata.Automata import Automata
+from mylstar.automata.Transition import Transition
 
 
 
@@ -108,10 +108,10 @@ class ObservationTable(object):
         A table is said consistent if every equivalent pair of rows in S remains equivalent
         in SA after appending any symbol of the input vocabulary.
 
-        >>> from pylstar.ObservationTable import ObservationTable
-        >>> from pylstar.KnowledgeBase import KnowledgeBase
-        >>> from pylstar.Letter import Letter, EmptyLetter
-        >>> from pylstar.Word import Word        
+        >>> from mylstar.ObservationTable import ObservationTable
+        >>> from mylstar.KnowledgeBase import KnowledgeBase
+        >>> from mylstar.Letter import Letter, EmptyLetter
+        >>> from mylstar.Word import Word        
         >>> kbase = KnowledgeBase()
         >>> ot = ObservationTable(input_letters = [], knowledge_base = kbase)
         >>> l_lambda = EmptyLetter()
@@ -240,13 +240,13 @@ class ObservationTable(object):
         In details, it insert all the prefixes of the counterexample to the upper part of the table.
         It also extend SA accordingly.
 
-        >>> from pylstar.ObservationTable import ObservationTable
-        >>> from pylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
-        >>> from pylstar.Letter import Letter, EmptyLetter
-        >>> from pylstar.Word import Word
-        >>> from pylstar.automata.State import State
-        >>> from pylstar.automata.Transition import Transition
-        >>> from pylstar.automata.Automata import Automata
+        >>> from mylstar.ObservationTable import ObservationTable
+        >>> from mylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
+        >>> from mylstar.Letter import Letter, EmptyLetter
+        >>> from mylstar.Word import Word
+        >>> from mylstar.automata.State import State
+        >>> from mylstar.automata.Transition import Transition
+        >>> from mylstar.automata.Automata import Automata
         >>> l_lambda = EmptyLetter()
         >>> l_a = Letter('a')
         >>> l_b = Letter('b')
@@ -351,13 +351,13 @@ class ObservationTable(object):
     def make_consistent(self,inconsistency):
         """This method makes consistent the observation table.
 
-        >>> from pylstar.ObservationTable import ObservationTable
-        >>> from pylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
-        >>> from pylstar.Letter import Letter, EmptyLetter
-        >>> from pylstar.Word import Word
-        >>> from pylstar.automata.State import State
-        >>> from pylstar.automata.Transition import Transition
-        >>> from pylstar.automata.Automata import Automata
+        >>> from mylstar.ObservationTable import ObservationTable
+        >>> from mylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
+        >>> from mylstar.Letter import Letter, EmptyLetter
+        >>> from mylstar.Word import Word
+        >>> from mylstar.automata.State import State
+        >>> from mylstar.automata.Transition import Transition
+        >>> from mylstar.automata.Automata import Automata
         >>> l_lambda = EmptyLetter()
         >>> l_a = Letter('a')
         >>> l_b = Letter('b')
@@ -467,10 +467,10 @@ class ObservationTable(object):
 
         The Observation table is said closed if all the rows in SA also exist in S.
 
-        >>> from pylstar.ObservationTable import ObservationTable
-        >>> from pylstar.KnowledgeBase import KnowledgeBase
-        >>> from pylstar.Letter import Letter, EmptyLetter
-        >>> from pylstar.Word import Word        
+        >>> from mylstar.ObservationTable import ObservationTable
+        >>> from mylstar.KnowledgeBase import KnowledgeBase
+        >>> from mylstar.Letter import Letter, EmptyLetter
+        >>> from mylstar.Word import Word        
         >>> kbase = KnowledgeBase()
         >>> ot = ObservationTable(input_letters = [], knowledge_base = kbase)
         >>> ot.initialize()
@@ -557,13 +557,13 @@ class ObservationTable(object):
         To close the observation table, it moves every row from SA to S that
         have no equivalent in S
 
-        >>> from pylstar.ObservationTable import ObservationTable
-        >>> from pylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
-        >>> from pylstar.Letter import Letter, EmptyLetter
-        >>> from pylstar.Word import Word
-        >>> from pylstar.automata.State import State
-        >>> from pylstar.automata.Transition import Transition
-        >>> from pylstar.automata.Automata import Automata
+        >>> from mylstar.ObservationTable import ObservationTable
+        >>> from mylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
+        >>> from mylstar.Letter import Letter, EmptyLetter
+        >>> from mylstar.Word import Word
+        >>> from mylstar.automata.State import State
+        >>> from mylstar.automata.Transition import Transition
+        >>> from mylstar.automata.Automata import Automata
         >>> l_lambda = EmptyLetter()
         >>> l_a = Letter('a')
         >>> l_b = Letter('b')
@@ -628,10 +628,10 @@ class ObservationTable(object):
     def __get_row(self, row_name):
         """This method returns the specified row
 
-        >>> from pylstar.ObservationTable import ObservationTable
-        >>> from pylstar.KnowledgeBase import KnowledgeBase
-        >>> from pylstar.Word import Word
-        >>> from pylstar.Letter import Letter
+        >>> from mylstar.ObservationTable import ObservationTable
+        >>> from mylstar.KnowledgeBase import KnowledgeBase
+        >>> from mylstar.Word import Word
+        >>> from mylstar.Letter import Letter
         >>> kbase = KnowledgeBase()
         >>> ot = ObservationTable([], kbase)
         >>> ot.initialize()
@@ -693,8 +693,8 @@ class ObservationTable(object):
 
         A 'None' word cannot be inserted in D
 
-        >>> from pylstar.ObservationTable import ObservationTable
-        >>> from pylstar.KnowledgeBase import KnowledgeBase
+        >>> from mylstar.ObservationTable import ObservationTable
+        >>> from mylstar.KnowledgeBase import KnowledgeBase
         >>> kbase = KnowledgeBase()
         >>> ot = ObservationTable(input_letters = [], knowledge_base = kbase)
         >>> ot._ObservationTable__add_word_in_D(None)
@@ -705,10 +705,10 @@ class ObservationTable(object):
 
         A word cannot be inserted twice in D
 
-        >>> from pylstar.ObservationTable import ObservationTable
-        >>> from pylstar.KnowledgeBase import KnowledgeBase
-        >>> from pylstar.Word import Word
-        >>> from pylstar.Letter import Letter
+        >>> from mylstar.ObservationTable import ObservationTable
+        >>> from mylstar.KnowledgeBase import KnowledgeBase
+        >>> from mylstar.Word import Word
+        >>> from mylstar.Letter import Letter
         >>> kbase = KnowledgeBase()
         >>> ot = ObservationTable(input_letters = [], knowledge_base = kbase)
         >>> w = Word([Letter("a")])
@@ -754,10 +754,10 @@ class ObservationTable(object):
         - recomputes new SAs made with the specified word + word_in_D        
 
 
-        >>> from pylstar.ObservationTable import ObservationTable
-        >>> from pylstar.KnowledgeBase import KnowledgeBase
-        >>> from pylstar.Letter import Letter
-        >>> from pylstar.Word import Word
+        >>> from mylstar.ObservationTable import ObservationTable
+        >>> from mylstar.KnowledgeBase import KnowledgeBase
+        >>> from mylstar.Letter import Letter
+        >>> from mylstar.Word import Word
         >>> kbase = KnowledgeBase()
         >>> ot = ObservationTable(input_letters = [], knowledge_base = kbase)
         >>> ot.initialize()
@@ -806,10 +806,10 @@ class ObservationTable(object):
         """Add the specified word in SA. In details, it does the following:
 
 
-        >>> from pylstar.ObservationTable import ObservationTable
-        >>> from pylstar.KnowledgeBase import KnowledgeBase
-        >>> from pylstar.Letter import Letter
-        >>> from pylstar.Word import Word
+        >>> from mylstar.ObservationTable import ObservationTable
+        >>> from mylstar.KnowledgeBase import KnowledgeBase
+        >>> from mylstar.Letter import Letter
+        >>> from mylstar.Word import Word
         >>> kbase = KnowledgeBase()
         >>> ot = ObservationTable(input_letters = [], knowledge_base = kbase)
         >>> ot.initialize()
@@ -849,8 +849,8 @@ class ObservationTable(object):
         
         An exception is raised if the query is None or if its execution failed
 
-        >>> from pylstar.ObservationTable import ObservationTable
-        >>> from pylstar.KnowledgeBase import KnowledgeBase
+        >>> from mylstar.ObservationTable import ObservationTable
+        >>> from mylstar.KnowledgeBase import KnowledgeBase
         >>> kbase = KnowledgeBase()
         >>> oTable = ObservationTable([], knowledge_base = kbase)
         >>> oTable._ObservationTable__execute_query(None)
@@ -873,10 +873,10 @@ class ObservationTable(object):
         If the observation table is closed and consistent, it is possible to construct
         an hypothesis automata. Each state of the automata maps to a row of S in the observation table.        
 
-        >>> from pylstar.ObservationTable import ObservationTable
-        >>> from pylstar.KnowledgeBase import KnowledgeBase
-        >>> from pylstar.Letter import Letter, EmptyLetter
-        >>> from pylstar.Word import Word
+        >>> from mylstar.ObservationTable import ObservationTable
+        >>> from mylstar.KnowledgeBase import KnowledgeBase
+        >>> from mylstar.Letter import Letter, EmptyLetter
+        >>> from mylstar.Word import Word
         >>> l_lambda = EmptyLetter()
         >>> l_a = Letter('a')
         >>> l_b = Letter('b')

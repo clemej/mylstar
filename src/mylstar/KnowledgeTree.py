@@ -30,9 +30,9 @@ import json
 # +----------------------------------------------------------------------------
 # | Pylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.tools.Decorators import PylstarLogger
-from pylstar.Word import Word
-from pylstar.Letter import Letter
+from mylstar.tools.Decorators import PylstarLogger
+from mylstar.Word import Word
+from mylstar.Letter import Letter
 
 
 @PylstarLogger
@@ -138,9 +138,9 @@ class KnowledgeNode(object):
 class KnowledgeTree(object):
     """A pythonic implementation of a tree that hosts query results.
 
-    >>> from pylstar.KnowledgeTree import KnowledgeTree
-    >>> from pylstar.Word import Word
-    >>> from pylstar.Letter import Letter
+    >>> from mylstar.KnowledgeTree import KnowledgeTree
+    >>> from mylstar.Word import Word
+    >>> from mylstar.Letter import Letter
     >>> tree = KnowledgeTree()
     >>> input_word = Word([Letter("a"), Letter("b")])
     >>> output_word = Word([Letter(1), Letter(2)])
@@ -183,9 +183,9 @@ class KnowledgeTree(object):
     def add_word(self, input_word, output_word):
         """This method can be use to associate an input word to an output word
 
-        >>> from pylstar.KnowledgeTree import KnowledgeTree
-        >>> from pylstar.Word import Word
-        >>> from pylstar.Letter import Letter
+        >>> from mylstar.KnowledgeTree import KnowledgeTree
+        >>> from mylstar.Word import Word
+        >>> from mylstar.Letter import Letter
         >>> tree = KnowledgeTree()
         >>> input_word = Word([Letter("a"), Letter("b")])
         >>> output_word = Word([Letter(1), Letter(2)])
@@ -194,9 +194,9 @@ class KnowledgeTree(object):
         The same association can be inserted twice iif both input and output are equivalent
         to the previously inserted association
 
-        >>> from pylstar.KnowledgeTree import KnowledgeTree
-        >>> from pylstar.Word import Word
-        >>> from pylstar.Letter import Letter
+        >>> from mylstar.KnowledgeTree import KnowledgeTree
+        >>> from mylstar.Word import Word
+        >>> from mylstar.Letter import Letter
         >>> tree = KnowledgeTree()
         >>> input_word = Word([Letter("a"), Letter("b")])
         >>> output_word = Word([Letter(1), Letter(2)])
@@ -229,9 +229,9 @@ class KnowledgeTree(object):
         """This method writes the content of the knowledge tree to the self.cache_file_path.
 
         >>> cache_file = "/tmp/test_ktree_cache.dump"
-        >>> from pylstar.KnowledgeTree import KnowledgeTree
-        >>> from pylstar.Word import Word
-        >>> from pylstar.Letter import Letter
+        >>> from mylstar.KnowledgeTree import KnowledgeTree
+        >>> from mylstar.Word import Word
+        >>> from mylstar.Letter import Letter
         >>> l_a = Letter("a")
         >>> l_b = Letter("b")
         >>> l_c = Letter("c")

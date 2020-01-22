@@ -28,12 +28,12 @@ import itertools
 from collections import deque
 
 # +----------------------------------------------------------------------------
-# | pylstar Imports
+# | mylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.tools.Decorators import PylstarLogger
-from pylstar.Word import Word
-from pylstar.Letter import EmptyLetter
-from pylstar.OutputQuery import OutputQuery
+from mylstar.tools.Decorators import PylstarLogger
+from mylstar.Word import Word
+from mylstar.Letter import EmptyLetter
+from mylstar.OutputQuery import OutputQuery
 
 
 @PylstarLogger

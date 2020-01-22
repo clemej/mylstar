@@ -29,7 +29,7 @@
 # +----------------------------------------------------------------------------
 # | Pylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.tools.Decorators import PylstarLogger
+from mylstar.tools.Decorators import PylstarLogger
 
 @PylstarLogger
 class Letter(object):
@@ -37,7 +37,7 @@ class Letter(object):
     A letter is a wrapper for a set of symbols. A word is made of letters.
     A symbol can be of any type (e.g. str, int, Custom class)
 
-    >>> from pylstar.Letter import Letter
+    >>> from mylstar.Letter import Letter
     >>> l1 = Letter("l1")
     >>> print(l1)
     Letter('l1')
@@ -58,7 +58,7 @@ class Letter(object):
     def __eq__(self, other):
         """Two letters are equal iif their symbols are equals
 
-        >>> from pylstar.Letter import Letter
+        >>> from mylstar.Letter import Letter
         >>> la = Letter("a")
         >>> lb = Letter("b")
         >>> la == lb
@@ -76,7 +76,7 @@ class Letter(object):
     def __ne__(self, other):
         """Two letters are not equal if their symbols are not equals
 
-        >>> from pylstar.Letter import Letter
+        >>> from mylstar.Letter import Letter
         >>> la = Letter("a")
         >>> lb = Letter("b")
         >>> la != lb

@@ -29,7 +29,7 @@
 # +----------------------------------------------------------------------------
 # | Pylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.tools.Decorators import PylstarLogger
+from mylstar.tools.Decorators import PylstarLogger
 
 
 @PylstarLogger
@@ -41,7 +41,7 @@ class OutputQuery(object):
 
     An output query cannot be created without specifing its input word
     
-    >>> from pylstar.OutputQuery import OutputQuery
+    >>> from mylstar.OutputQuery import OutputQuery
     >>> output_query = OutputQuery(None)
     Traceback (most recent call last):
     ...
@@ -58,9 +58,9 @@ class OutputQuery(object):
     def is_queried(self):
         """This method returns True is the query was queried
 
-        >>> from pylstar.OutputQuery import OutputQuery
-        >>> from pylstar.Word import Word
-        >>> from pylstar.Letter import Letter
+        >>> from mylstar.OutputQuery import OutputQuery
+        >>> from mylstar.Word import Word
+        >>> from mylstar.Letter import Letter
         >>> w1 = Word([Letter("a")])
         >>> output_query = OutputQuery(w1)
         >>> output_query.is_queried()

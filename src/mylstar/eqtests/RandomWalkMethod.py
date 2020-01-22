@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # +---------------------------------------------------------------------------+
-# | pylstar : Implementation of the LSTAR Grammatical Inference Algorithm     |
+# | mylstar : Implementation of the LSTAR Grammatical Inference Algorithm     |
 # +---------------------------------------------------------------------------+
 # | Copyright (C) 2015 Georges Bossert                                        |
 # | This program is free software: you can redistribute it and/or modify      |
@@ -17,7 +17,7 @@
 # | You should have received a copy of the GNU General Public License         |
 # | along with this program. If not, see <http://www.gnu.org/licenses/>.      |
 # +---------------------------------------------------------------------------+
-# | @url      : https://github.com/gbossert/pylstar                           |
+# | @url      : https://github.com/gbossert/mylstar                           |
 # | @contact  : gbossert@miskin.fr                                            |
 # +---------------------------------------------------------------------------+
 
@@ -27,11 +27,11 @@
 import random
 
 # +----------------------------------------------------------------------------
-# | pylstar Imports
+# | mylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.tools.Decorators import PylstarLogger
-from pylstar.Word import Word
-from pylstar.OutputQuery import OutputQuery
+from mylstar.tools.Decorators import PylstarLogger
+from mylstar.Word import Word
+from mylstar.OutputQuery import OutputQuery
 
 
 @PylstarLogger
@@ -40,13 +40,13 @@ class RandomWalkMethod(object):
     The output symbols produced while triggering transitions are compared to the ones produced when trigerring
     the same transitions in the targeted automata.
 
-    >>> from pylstar.LSTAR import LSTAR
-    >>> from pylstar.automata.State import State
-    >>> from pylstar.automata.Transition import Transition
-    >>> from pylstar.automata.Automata import Automata
-    >>> from pylstar.Letter import Letter
-    >>> from pylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
-    >>> from pylstar.eqtests.RandomWalkMethod import RandomWalkMethod
+    >>> from mylstar.LSTAR import LSTAR
+    >>> from mylstar.automata.State import State
+    >>> from mylstar.automata.Transition import Transition
+    >>> from mylstar.automata.Automata import Automata
+    >>> from mylstar.Letter import Letter
+    >>> from mylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
+    >>> from mylstar.eqtests.RandomWalkMethod import RandomWalkMethod
     >>> symbol_a = "a"
     >>> symbol_b = "b"
     >>> symbol_c = "c"
@@ -98,12 +98,12 @@ class RandomWalkMethod(object):
     }
 
     
-    >>> from pylstar.LSTAR import LSTAR
-    >>> from pylstar.automata.State import State
-    >>> from pylstar.automata.Transition import Transition
-    >>> from pylstar.automata.Automata import Automata
-    >>> from pylstar.Letter import Letter
-    >>> from pylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
+    >>> from mylstar.LSTAR import LSTAR
+    >>> from mylstar.automata.State import State
+    >>> from mylstar.automata.Transition import Transition
+    >>> from mylstar.automata.Automata import Automata
+    >>> from mylstar.Letter import Letter
+    >>> from mylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
     >>> # input symbols
     >>> symbol_hello = "hello"
     >>> symbol_bye = "bye"

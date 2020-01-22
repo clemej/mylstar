@@ -32,11 +32,11 @@ import time
 # +----------------------------------------------------------------------------
 # | pylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.ObservationTable import ObservationTable
-from pylstar.tools.Decorators import PylstarLogger
-from pylstar.Letter import Letter
-from pylstar.eqtests.WpMethodEQ import WpMethodEQ
-from pylstar.eqtests.RandomWalkMethod import RandomWalkMethod
+from mylstar.ObservationTable import ObservationTable
+from mylstar.tools.Decorators import PylstarLogger
+from mylstar.Letter import Letter
+from mylstar.eqtests.WpMethodEQ import WpMethodEQ
+from mylstar.eqtests.RandomWalkMethod import RandomWalkMethod
 
 
 @PylstarLogger
@@ -44,12 +44,12 @@ class LSTAR(object):
     """TODO : Describe here the inner working of the LSTAR Algorithm
 
 
-    >>> from pylstar.LSTAR import LSTAR
-    >>> from pylstar.automata.State import State
-    >>> from pylstar.automata.Transition import Transition
-    >>> from pylstar.automata.Automata import Automata
-    >>> from pylstar.Letter import Letter
-    >>> from pylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
+    >>> from mylstar.LSTAR import LSTAR
+    >>> from mylstar.automata.State import State
+    >>> from mylstar.automata.Transition import Transition
+    >>> from mylstar.automata.Automata import Automata
+    >>> from mylstar.Letter import Letter
+    >>> from mylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
     >>> symbol_a = "a"
     >>> symbol_b = "b"
     >>> symbol_c = "c"
@@ -98,12 +98,12 @@ class LSTAR(object):
     "1" -> "0" [fontsize=5, label="c / 1", URL="t5"];
     }
 
-    >>> from pylstar.LSTAR import LSTAR
-    >>> from pylstar.automata.State import State
-    >>> from pylstar.automata.Transition import Transition
-    >>> from pylstar.automata.Automata import Automata
-    >>> from pylstar.Letter import Letter
-    >>> from pylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
+    >>> from mylstar.LSTAR import LSTAR
+    >>> from mylstar.automata.State import State
+    >>> from mylstar.automata.Transition import Transition
+    >>> from mylstar.automata.Automata import Automata
+    >>> from mylstar.Letter import Letter
+    >>> from mylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
     >>> # input symbols
     >>> symbol_hello = "hello"
     >>> symbol_bye = "bye"
@@ -183,12 +183,12 @@ class LSTAR(object):
     }
 
 
-    >>> from pylstar.LSTAR import LSTAR
-    >>> from pylstar.automata.State import State
-    >>> from pylstar.automata.Transition import Transition
-    >>> from pylstar.automata.Automata import Automata
-    >>> from pylstar.Letter import Letter
-    >>> from pylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
+    >>> from mylstar.LSTAR import LSTAR
+    >>> from mylstar.automata.State import State
+    >>> from mylstar.automata.Transition import Transition
+    >>> from mylstar.automata.Automata import Automata
+    >>> from mylstar.Letter import Letter
+    >>> from mylstar.FakeActiveKnowledgeBase import FakeActiveKnowledgeBase
     >>> symbol_a = "a"
     >>> symbol_b = "b"
     >>> symbol_c = "c"
@@ -402,7 +402,7 @@ class LSTAR(object):
     @tmp_dir.setter
     def tmp_dir(self, value):
         if value is None:
-            self.__tmp_dir = tempfile.mkdtemp(prefix='pylstar_')
+            self.__tmp_dir = tempfile.mkdtemp(prefix='mylstar_')
         else:
             self.__tmp_dir = value
 
