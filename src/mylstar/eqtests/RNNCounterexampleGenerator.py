@@ -3,9 +3,9 @@
 #
 from copy import deepcopy
 from time import clock
-from pylstar.Letter import Letter, EmptyLetter
-from pylstar.Word import Word
-from pylstar.OutputQuery import OutputQuery
+from mylstar.Letter import Letter, EmptyLetter
+from mylstar.Word import Word
+from mylstar.OutputQuery import OutputQuery
 
 class WhiteboxRNNCounterexampleGenerator:
     def __init__(self,network,parent,partitioning,starting_examples):

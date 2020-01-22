@@ -32,12 +32,12 @@ import random
 # +----------------------------------------------------------------------------
 # | pylstar Imports
 # +----------------------------------------------------------------------------
-from pylstar.tools.Decorators import PylstarLogger
-from pylstar.Word import Word
-from pylstar.Letter import EmptyLetter
-from pylstar.OutputQuery import OutputQuery
-from pylstar.eqtests.RNNQuantisations import SVMDecisionTreeQuantisation
-from pylstar.eqtests.RNNCounterexampleGenerator import WhiteboxRNNCounterexampleGenerator
+from mylstar.tools.Decorators import PylstarLogger
+from mylstar.Word import Word
+from mylstar.Letter import EmptyLetter
+from mylstar.OutputQuery import OutputQuery
+from mylstar.eqtests.RNNQuantisations import SVMDecisionTreeQuantisation
+from mylstar.eqtests.RNNCounterexampleGenerator import WhiteboxRNNCounterexampleGenerator
 
 
 @PylstarLogger
@@ -54,7 +54,6 @@ class RNNExtractorMethod(object):
 
     """
     
-
     def __init__(self, knowledge_base, input_letters, network, max_steps, 
                     num_dims_initial_split=10, starting_examples=None):
         self.knowledge_base = knowledge_base
