@@ -23,7 +23,6 @@ class WhiteboxRNNCounterexampleGenerator:
     def _get_counterexample_from(self,words):
         words = sorted(words,key=lambda x:len(x)) #prefer shortest possible counterexample
         for w in words:
-            print(w)
             # XXXjc special case zero-length word?
             if len(w.letters) == 0:
                 if self.whiteboxrnn.submit_word(w) != self.proposed_dfa.initial_state:
@@ -49,7 +48,8 @@ class WhiteboxRNNCounterexampleGenerator:
         q2 = new_info.dfa_state
         prefixes = old_info.paths  + new_info.paths
         suffix = self.parent.minimal_diverging_suffix(q1,q2)
-        return self._get_counterexample_from([p+suffix for p in prefixes])
+        #print(" --- ", prefixes, suffix, prefixes[0] + suffix, type(prefixes[0]), type(suffix))
+        return self._get_counterexample_from([Word(p.letters+suffix.letters) for p in prefixes])
 
     def _process_new_state_except_children(self,new_cluster,new_info):
         counterexample = None
@@ -58,12 +58,18 @@ class WhiteboxRNNCounterexampleGenerator:
         old_info = self.cluster_information[new_cluster] if new_cluster in self.cluster_information else None
         full_info = old_info + new_info if not old_info == None else new_info
         
-        print(new_info, "\n", old_info, "\n", full_info)
+        #print(new_info, "\n", old_info, "\n", full_info)
+        #print(new_info.accepting, new_info.paths[0], self.proposed_dfa.play_word(new_info.paths[0])[0], new_info.accepting.letters )
+        #print(type(new_info.accepting), type(new_info.paths[0]), type(self.proposed_dfa.play_word(new_info.paths[0])[0]))
         if not new_info.accepting == self.proposed_dfa.play_word(new_info.paths[0])[0]:
+            #print(self.proposed_dfa.play_word(new_info.paths[0])[0].letters)
         #if not new_info.dfa_state == 
             counterexample = self._counterexample_from_classification_conflict(new_info)
         #elif ...
-        elif not new_info.dfa_state == full_info.dfa_state:
+        elif not new_info.dfa_state.name == full_info.dfa_state.name:
+            print(new_info.dfa_state, full_info.dfa_state)
+            print(type(new_info.dfa_state), type( full_info.dfa_state))
+            print("cluster conflict ", new_info.dfa_state, full_info.dfa_state)
             counterexample = self._counterexample_from_cluster_conflict(old_info,new_info)
             if counterexample == None:
                 split = SplitInfo(agreeing_RStates=old_info.RStates, 
@@ -83,6 +89,9 @@ class WhiteboxRNNCounterexampleGenerator:
             for char in self.parent.input_letters:
                 next_RState, pos = self.whiteboxrnn.get_next_RState(RState, char)
                 path = state_info.paths[0] + Word([char,])
+                #XXXjc test
+                pos = self.whiteboxrnn.submit_word(path)
+
                 # we only ever explore a state the first
                 # time we find it, so, with the first path in its list of reaching paths
                 next_dfa_state = state_info.dfa_state.visit(char)[1] #self.proposed_dfa.delta[state_info.dfa_state][char]

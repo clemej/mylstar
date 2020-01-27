@@ -62,6 +62,7 @@ class Word(object):
     def __eq__(self, other):
         if not isinstance(other, Word):
             return False
+        #print (self.letters, other.letters)
         return self.letters == other.letters
 
     def __ne__(self, other):

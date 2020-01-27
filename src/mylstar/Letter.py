@@ -150,3 +150,9 @@ class EmptyLetter(Letter):
 
     def __str__(self):
         return "EmptyLetter"
+
+    def __eq__(self, other):
+        #print("el: ", type(other), type(self))
+        if not isinstance(other, EmptyLetter):
+            return False
+        return True

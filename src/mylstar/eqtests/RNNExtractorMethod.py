@@ -71,6 +71,8 @@ class RNNExtractorMethod(object):
         self._logger.info("Starting the to search for a WhiteboxRNN counter-example")
         cex,msg = self.counterexample_generator.counterexample(hypothesis)
         print(msg)
+        if cex == None: 
+            return None
         query = OutputQuery(cex)
         self.knowledge_base.resolve_query(query)
         print(query)
@@ -95,7 +97,7 @@ class RNNExtractorMethod(object):
         # just make and minimise copies of this automaton starting from s1 and s2 before starting the BFS,
         # is slower than this basic BFS, so don't
         seen_states = set()
-        new_states = {(Word(),(state1,state2))}
+        new_states = {(tuple(),(state1,state2))}
         while len(new_states) > 0:
             prefix,state_pair = new_states.pop()
             s1,s2 = state_pair
@@ -106,7 +108,8 @@ class RNNExtractorMethod(object):
             seen_states.add(state_pair)
             for a in self.input_letters:
                 next_state_pair = (s1.visit(a)[1],s2.visit(a)[1])
-                next_tuple = (prefix.letters.append(a),next_state_pair)
+                #print("div_suf: next state pair: ", prefix, s1, s2, a, next_state_pair)
+                next_tuple = (tuple(list(prefix)+[a]),next_state_pair)
                 if not next_tuple in new_states and not next_state_pair in seen_states:
                     new_states.add(next_tuple)
-        return res
+        return Word(res)

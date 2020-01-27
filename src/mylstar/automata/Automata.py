@@ -31,6 +31,7 @@
 # +----------------------------------------------------------------------------
 from mylstar.tools.Decorators import PylstarLogger
 from mylstar.Word import Word
+from mylstar.Letter import EmptyLetter
 from mylstar.automata.State import State
 
 
@@ -93,6 +94,10 @@ class Automata(object):
         if input_word is None or len(input_word) == 0:
             raise Exception("Input word cannot be None or empty")
 
+        #if input_word == Word([EmptyLetter()]) and starting_state == None:
+        #    self._logger.debug("Received Word([EmptyLetter()]), returning initial state")
+        #    return (Word([EmptyLetter()]), self.initial_state)
+
         if starting_state is None:
             current_state = self.initial_state
         else:
@@ -104,9 +109,14 @@ class Automata(object):
         visited_states = []
         
         for letter in input_word.letters:
-            (output_letter, output_state) = current_state.visit(letter)
-            output_letters.append(output_letter)
-            visited_states.append(output_state)
+            if letter == EmptyLetter():
+                output_letters.append(EmptyLetter())
+                visited_states.append(current_state)
+                output_state = current_state
+            else:
+                (output_letter, output_state) = current_state.visit(letter)
+                output_letters.append(output_letter)
+                visited_states.append(output_state)
 
             current_state = output_state
 

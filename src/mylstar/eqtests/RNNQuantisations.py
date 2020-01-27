@@ -2,7 +2,8 @@
 # From: https://github.com/tech-srl/lstar_extraction.git
 #
 import numpy as np
-from Helper_Functions import mean
+#from Helper_Functions import mean
+from statistics import mean
 from sklearn import svm
 from copy import deepcopy
 
@@ -66,9 +67,11 @@ class SVMDecisionTreeNode:
         print("trying regular svm split")
         x = agreeing_continuous_visitors + [conflicted_continuous_visitor]
         y = [0]*len(agreeing_continuous_visitors) + [1]
-        self.clf = svm.LinearSVC(C=10000)
+        #self.clf = svm.LinearSVC(C=10000,max_iter=1000000)
+        self.clf = svm.LinearSVC(C=1000,max_iter=1000000)
+        #self.clf = svm.SVC(gamma='auto', C=10, max_iter=1000000)
         self.clf.fit(x,y)
-        # print("clf used this many support vectors: " + str(self.clf.n_support_))
+        #print("clf used this many support vectors: " + str(self.clf.n_support_))
         self.zero_child = SVMDecisionTreeNode(self.id)
         self.one_child = SVMDecisionTreeNode(new_id)
         new_id += 1
@@ -76,6 +79,9 @@ class SVMDecisionTreeNode:
         self.is_dim_split = False
         print(y, self.clf.predict(x).tolist())
         if not self.clf.predict(x).tolist() == y:
+            print(x)
+            print(y)
+            print(self.clf.predict(x))
             print("svm classifier failed to obtain perfect split :(")
         return new_id
 
